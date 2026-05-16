@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boekingsaanvraag | Duc'dalf Languedoc</title>
+  <link rel="icon" href="/Huis1.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/Huis1.jpg">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .booking-form-container {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+      max-width: 400px;
+      width: 95vw;
+      padding: 2rem 1.2rem 1.2rem 1.2rem;
+      margin: 2rem auto;
+    }
+    .booking-form-container h2 {
+      margin-top: 0;
+      color: #3a6ea5;
+      font-size: 1.3rem;
+      text-align: center;
+    }
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin-top: 1.2rem;
+    }
+    .booking-form label {
+      font-weight: 500;
+      color: #3a6ea5;
+      margin-bottom: 0.2rem;
+    }
+    .booking-form input,
+    .booking-form textarea {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+      box-sizing: border-box;
+    }
+    .booking-form button.booking-btn {
+      background: #ffd600;
+      color: #222;
+      border: none;
+      padding: 0.9rem 2.2rem;
+      font-size: 1.1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.2s;
+      margin-top: 0.5rem;
+      width: fit-content;
+      align-self: flex-start;
+    }
+    .booking-form button.booking-btn:hover {
+      background: #ffe066;
+    }
+  </style>
+</head>
+<body>
+  <a href="/" class="back-to-home">Terug naar homepagina</a>
+  <div class="booking-flex-container" style="margin-top: 5.5rem;">
+    <div class="booking-form-container">
+      <h2>Boekingsaanvraag</h2>
+      <form class="booking-form" action="https://formsubmit.co/ducdalf.languedoc@gmail.com" method="POST">
+        <input type="hidden" name="_subject" value="Nieuwe boeking Duc'dalf" />
+        <input type="hidden" name="_next" value="https://vakantiehuis-ducdalf.nl/bedankt/" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="box" />
+        <label for="boeknaam">Naam:</label>
+        <input type="text" id="boeknaam" name="naam" required>
+        <label for="boekemail">E-mailadres:</label>
+        <input type="email" id="boekemail" name="email" required>
+        <label for="boekpersonen">Aantal personen:</label>
+        <input type="number" id="boekpersonen" name="aantal_personen" min="1" max="6" required>
+        <label for="boekaankomst">Aankomstdatum:</label>
+        <input type="date" id="boekaankomst" name="aankomstdatum" required>
+        <label for="boekvertrek">Vertrekdatum:</label>
+        <input type="date" id="boekvertrek" name="vertrekdatum" required>
+        <label for="boekopmerkingen">Eventuele opmerkingen:</label>
+        <textarea id="boekopmerkingen" name="opmerkingen" rows="3"></textarea>
+        <button type="submit" class="booking-btn">Verzenden</button>
+      </form>
+      <!-- Na verzenden wordt u direct teruggestuurd naar de homepage. -->
+    </div>
+    <div class="calendar-container">
+      <h2 class="calendar-title">Beschikbaarheid</h2>
+      <div class="calendar-iframe-wrapper">
+        <iframe 
+          src="https://calendar.google.com/calendar/embed?src=ducdalf.languedoc%40gmail.com&ctz=Europe%2FAmsterdam&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0" 
+          style="border: 0" 
+          width="800" 
+          height="600" 
+          frameborder="0" 
+          scrolling="no">
+        </iframe>
+        <div class="calendar-footer-cover"></div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .booking-flex-container {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: 2rem auto;
+      max-width: 1200px;
+      width: min(94vw, 1200px);
+    }
+    .calendar-container {
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      margin: 2rem auto;
+      max-width: 800px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .calendar-container iframe {
+      width: 100%;
+      height: 580px;
+    }
+    .booking-form-container {
+      min-width: 320px;
+      max-width: 500px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .calendar-title {
+      margin-top: 0;
+      color: #3a6ea5;
+      font-size: 1.3rem;
+      text-align: center;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .calendar-iframe-wrapper {
+      position: relative;
+      width: 100%;
+      padding-top: 75%;
+      max-width: 800px;
+    }
+    .calendar-iframe-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    .calendar-footer-cover {
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 40px;
+      background: #f7f7f7;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .back-to-home {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      display: inline-block;
+      padding: 0.6rem 1.4rem;
+      background: #3a6ea5;
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      transition: background 0.2s;
+      white-space: nowrap;
+      z-index: 10;
+    }
+    .back-to-home:hover {
+      background: #285080;
+    }
+    @media (max-width: 900px) {
+      body {
+        padding: 1rem 0.5rem 2rem;
+      }
+      .booking-flex-container {
+        flex-direction: column;
+        align-items: stretch;
+        width: min(96vw, 640px);
+      }
+      .calendar-container {
+        margin-top: 1rem;
+      }
+      .calendar-iframe-wrapper {
+        padding-top: 90%;
+      }
+    }
+    @media (max-width: 600px) {
+      body {
+        padding: 1rem 0.75rem 2.5rem;
+      }
+      .back-to-home {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 1rem;
+      }
+      .booking-flex-container {
+        width: 100%;
+        margin-top: 4rem;
+      }
+      .booking-form-container {
+        padding: 1.5rem 1rem 1rem;
+      }
+      .calendar-iframe-wrapper {
+        padding-top: 115%;
+      }
+      .calendar-container iframe {
+        height: auto;
+      }
+    }
+  </style>
+</body>
+</html>
+

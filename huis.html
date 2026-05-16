@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Het huis | Duc'dalf Languedoc</title>
+  <link rel="icon" href="/Huis1.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="/Huis1.jpg">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    .hero-image {
+      width: 100vw;
+      max-height: 340px;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
+      border-bottom-left-radius: 32px;
+      border-bottom-right-radius: 32px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+    }
+    .main-content {
+      max-width: 900px;
+      margin: -80px auto 2.5rem auto;
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+      padding: 2.5rem 2rem 2rem 2rem;
+      position: relative;
+      z-index: 2;
+    }
+    .huis-title {
+      color: #3a6ea5;
+      font-size: 2.2rem;
+      font-weight: bold;
+      margin-bottom: 0.7rem;
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    .subtitle {
+      color: #285080;
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .section {
+      margin-bottom: 2.2rem;
+    }
+    .section-title {
+      color: #3a6ea5;
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.7rem;
+      margin-top: 1.5rem;
+    }
+    ul.bullet-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.2rem 0;
+    }
+    ul.bullet-list li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.5em;
+      position: relative;
+      font-size: 1.05rem;
+    }
+    ul.bullet-list li:before {
+      content: '•';
+      color: #3a6ea5;
+      position: absolute;
+      left: 0;
+      font-size: 1.3em;
+      top: 0.1em;
+    }
+    .info-block {
+      background: #e3f0fa;
+      border-radius: 16px;
+      padding: 1.2rem 1.2rem 1rem 1.2rem;
+      color: #285080;
+      font-size: 1.08rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .prijzen-tabel {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      background: #f7f7f7;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    .prijzen-tabel th, .prijzen-tabel td {
+      border: none;
+      padding: 0.8rem 1rem;
+      text-align: left;
+    }
+    .prijzen-tabel th {
+      background: #e3f0fa;
+      color: #3a6ea5;
+      font-weight: bold;
+    }
+    .prijzen-tabel tr:not(:last-child) td {
+      border-bottom: 1px solid #e3f0fa;
+    }
+    .boek-btn {
+      display: inline-block;
+      background: #ffd600;
+      color: #222;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 25px;
+      padding: 1rem 2.5rem;
+      margin: 2rem auto 0 auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-decoration: none;
+      transition: background 0.2s;
+      cursor: pointer;
+      text-align: center;
+    }
+    .boek-btn:hover {
+      background: #ffe066;
+    }
+    nav {
+      background: #e3f0fa;
+      padding: 0.5rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 1rem;
+      position: relative;
+    }
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .nav-links a {
+      color: #3a6ea5;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #285080;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-right: 1rem;
+      z-index: 20;
+    }
+    .hamburger span {
+      display: block;
+      width: 28px;
+      height: 4px;
+      margin: 4px 0;
+      background: #3a6ea5;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+    .nav-title-mobile {
+      display: none;
+      font-size: 1.1rem;
+      color: #3a6ea5;
+      font-weight: bold;
+      white-space: nowrap;
+      letter-spacing: 1px;
+      text-align: center;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 900px) {
+      .main-content {
+        padding: 1.2rem 0.3rem 1.2rem 0.3rem;
+        margin: -40px 0.2rem 1.2rem 0.2rem;
+      }
+      .huis-title {
+        font-size: 1.3rem;
+      }
+      .hero-image {
+        max-height: 180px;
+        border-bottom-left-radius: 18px;
+        border-bottom-right-radius: 18px;
+      }
+    }
+    @media (max-width: 600px) {
+      nav {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      .nav-container {
+        max-width: 600px;
+        margin: 0 auto;
+        justify-content: flex-start;
+        padding-left: 0.2rem;
+      }
+      .nav-title-mobile {
+        display: flex;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 56px;
+        left: 0;
+        width: 100vw;
+        background: #e3f0fa;
+        flex-direction: column;
+        align-items: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        z-index: 10;
+      }
+      .nav-links.open {
+        display: flex;
+      }
+      .nav-links a {
+        margin: 1rem 0;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-container">
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/huis/">Het huis</a>
+        <a href="/#omgeving">De omgeving</a>
+        <a href="/#ons">Over ons</a>
+        <a href="/boeken/">Boeken</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+  <img src="Huis1.jpg" alt="Vakantiehuis Parc le Duc" class="hero-image">
+  <div class="main-content">
+    <!-- Titel verwijderd zoals gevraagd -->
+    <div class="subtitle"><strong>Geniet van rust, comfort en een prachtige tuin met uitzicht op de heuvels</strong></div>
+    <div class="info-block">
+      Het huis ligt aan een rustige doodlopende weg met eigen parkeerplek. U heeft veel privacy, zowel in het huis als in de tuin. De natuurlijke tuin biedt een prachtig uitzicht op de heuvels en bosschages buiten het park.
+    </div>
+    <div class="section">
+      <div class="section-title">Indeling</div>
+      <ul class="bullet-list">
+        <li>3 slaapkamers: één met 2-persoonsbed en ombouwkasten, openslaande deuren met hordeuren</li>
+        <li>Één slaapkamer met stapelbed en hang-legkast</li>
+        <li>Één slaapkamer met 2 (onderschuif) eenpersoonsbedden en commode-ladenkast</li>
+        <li>Woonkamer met ruime hoekbank, fauteuil, uittrekbare eettafel, glazen/servieskast en koffietafel</li>
+        <li>Badkamer met douche (glazen scheidingswand), wastafel, wasmachine en toiletkastje</li>
+        <li>Apart toilet</li>
+        <li>Keuken met oven/magnetron, grote koelkast met ruim vriesgedeelte</li>
+        <li>Koffiezetapparaat, waterkoker, royale pannenset, bestek, servies en glaswerk</li>
+        <li>Berging met warmwaterboiler, opbergruimte en elektrische barbecue</li>
+        <li>Voor alle ramen zijn horren geplaatst</li>
+        <li>Voorzien van airco en verwarming</li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="section-title">Tuin & Terras</div>
+      <ul class="bullet-list">
+        <li>Ruim terras plus overdekt terras</li>
+        <li>Groot zitgedeelte in de tuin</li>
+        <li>Diverse tuintafels, stoelen en parasols</li>
+        <li>Natuurlijke tuin met prachtig uitzicht</li>
+        <li>Elektrische barbecue voor buitengebruik</li>
+        <li>Parkeren op eigen terrein</li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="section-title">Faciliteiten</div>
+      <ul class="bullet-list">
+        <li>Airco en verwarming</li>
+        <li>Overdekt terras, parasol, terrasmeubilair</li>
+        <li>Ventilator(en)</li>
+        <li>TV met chromecast + afstandsbediening (oa Nederlandse tv-zenders via KPN én streamen), DVD-speler</li>
+        <li>Oven, (combi-)magnetron, grote koelkast, vriezer</li>
+        <li>Wasmachine</li>
+        <li>Waterkoker, koffiezetapparaat</li>
+        <li>Horren voor alle ramen</li>
+        <li>Huisdieren toegestaan</li>
+        <li>Roken niet toegestaan</li>
+        <li>Ruimte voor kinderbedje</li>
+      </ul>
+    </div>
+    <div class="section">
+      <div class="section-title">Prijzen</div>
+      <table class="prijzen-tabel">
+        <tr><th>Periode</th><th>Prijs per week</th></tr>
+        <tr><td>Laagseizoen (1 jan t/m 26 apr & 3 nov t/m 31 dec)</td><td>€ 665</td></tr>
+        <tr><td>Middenseizoen (26 apr t/m 5 jul & 31 aug t/m 3 nov)</td><td>€ 700</td></tr>
+        <tr><td>Hoogseizoen (5 jul t/m 31 aug)</td><td>€ 980</td></tr>
+      </table>
+      <div class="info-block" style="margin-top:0.7rem;">
+        Prijzen zijn inclusief schoonmaak, exclusief toeristenbelasting (€ 1,- p.p.p.n., tot 18 jaar gratis).<br>
+        <br>
+        <b>Linnenpakket één persoons:</b> € 12,50<br>
+        <b>Linnenpakket twee persoons:</b> € 25,-<br>
+        <b>Handdoekenpakket:</b> € 5,-<br>
+        <br>
+        <span style="font-size:0.97em;">Bij een bestelling van één of meer linnenpakketten wordt één keukenhanddoek en theedoek geleverd.</span>
+      </div>
+    </div>
+    <div class="section" style="text-align:center;">
+      <a href="/boeken/" class="boek-btn">Boek nu</a>
+    </div>
+    <div class="section" style="text-align:center;font-size:1.05rem;color:#285080;">
+      Vragen? Vul het onderstaande contactformulier in
+    </div>
+    <div id="contact-form" style="max-width:500px;margin:2rem auto 0 auto;">
+      <form class="contact-form" autocomplete="off" method="POST" action="https://formsubmit.co/ducdalf.languedoc@gmail.com" style="background:#fff;padding:2rem;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
+        <input type="hidden" name="_subject" value="Contactformulier via huispagina" />
+        <input type="hidden" name="_next" value="https://vakantiehuis-ducdalf.nl/contact/" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_template" value="box" />
+        <h3 style="color:#3a6ea5;">Contact</h3>
+        <label for="naam">Naam</label>
+        <input type="text" id="naam" name="naam" required style="width:100%;padding:0.7rem;border:1px solid #ccc;border-radius:5px;font-size:1rem;margin-bottom:0.5rem;box-sizing:border-box;">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" required style="width:100%;padding:0.7rem;border:1px solid #ccc;border-radius:5px;font-size:1rem;margin-bottom:0.5rem;box-sizing:border-box;">
+        <label for="bericht">Bericht</label>
+        <textarea id="bericht" name="bericht" rows="4" required style="width:100%;padding:0.7rem;border:1px solid #ccc;border-radius:5px;font-size:1rem;margin-bottom:0.5rem;box-sizing:border-box;"></textarea>
+        <button type="submit" style="background:#3a6ea5;color:#fff;border:none;padding:0.8rem 2rem;border-radius:20px;font-size:1rem;cursor:pointer;margin-top:1rem;transition:background 0.2s;margin-bottom:1.5rem;">Verzenden</button>
+      </form>
+    </div>
+  </div>
+  <script>
+// Hamburger menu functionaliteit
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const navLinks = document.getElementById('navLinks');
+if (hamburgerBtn && navLinks) {
+  hamburgerBtn.addEventListener('click', function() {
+    navLinks.classList.toggle('open');
+    const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+    hamburgerBtn.setAttribute('aria-expanded', !expanded);
+  });
+  // Sluit menu na klikken op een link (alleen mobiel)
+  navLinks.querySelectorAll('a').forEach(function(link) {
+    link.addEventListener('click', function() {
+      if (window.innerWidth <= 600) {
+        navLinks.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', false);
+      }
+    });
+  });
+}
+</script>
+</body>
+</html> 
