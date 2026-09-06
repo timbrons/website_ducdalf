@@ -4,45 +4,44 @@
   <script>document.write('<base href="' + (location.hostname.endsWith('.github.io') ? '/website_ducdalf/' : '/') + '">');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bedankt voor uw boeking!</title>
+  <title>Boeking ontvangen &mdash; Duc'dalf Languedoc</title>
   <link rel="icon" href="Huis1.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="Huis1.jpg">
   <meta http-equiv="refresh" content="10;url=https://vakantiehuis-ducdalf.nl/">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f7f7f7;
-      color: #222;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-    .thanks-box {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-      padding: 2rem 2.5rem;
-      text-align: center;
-      max-width: 400px;
-    }
-    .thanks-box h1 {
-      color: #3a6ea5;
-      margin-top: 0;
-    }
-    .thanks-box a {
-      color: #3a6ea5;
-      text-decoration: underline;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="thanks-box">
-    <h1>Bedankt voor uw boeking!</h1>
-    <p>Uw aanvraag is succesvol verzonden.<br>U wordt zo teruggestuurd naar de homepagina.</p>
-    <p>Gaat u niet automatisch terug? <a href="https://vakantiehuis-ducdalf.nl">Klik hier</a>.</p>
+
+  <nav class="nav light" id="nav">
+    <div class="nav-inner">
+      <div class="nav-brand"><a href="./">DUC&rsquo;DALF <span>&mdash;</span> LANGUEDOC</a></div>
+      <div class="nav-links" id="navLinks">
+        <a href="./">Home</a>
+        <a href="huis/">Het huis</a>
+        <a href="./#omgeving">De omgeving</a>
+        <a href="./#park">Parc le Duc</a>
+        <a href="boeken/">Boeken</a>
+        <a href="./#contact">Contact</a>
+      </div>
+      <div class="nav-cta-wrap"></div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="thanks-wrap">
+    <div class="thanks-box">
+      <span class="eyebrow">Reserveren</span>
+      <h1>Bedankt voor uw boeking</h1>
+      <p>Uw aanvraag is succesvol verzonden. Wij bevestigen zo snel mogelijk.</p>
+      <p>U wordt zo teruggestuurd naar de homepagina.</p>
+      <p>Gaat u niet automatisch terug? <a href="./">Klik hier</a>.</p>
+    </div>
   </div>
+
 </body>
-</html> 
+</html>

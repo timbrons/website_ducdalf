@@ -4,326 +4,126 @@
   <script>document.write('<base href="' + (location.hostname.endsWith('.github.io') ? '/website_ducdalf/' : '/') + '">');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aanmeldingsformulier Duc'dalf - Parc le Duc</title>
+  <title>Aanmeldingsformulier &mdash; Duc'dalf Languedoc</title>
   <link rel="icon" href="Huis1.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="Huis1.jpg">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f7f7f7 url('wijn.jpg') center center / cover no-repeat fixed;
-      color: #222;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-    }
-    .form-wrapper {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-      max-width: 800px;
-      width: 95vw;
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
-      margin: 4rem auto 2rem;
-      box-sizing: border-box;
-    }
-    .form-wrapper h1 {
-      margin: 0 0 0.4rem;
-      color: #3a6ea5;
-      font-size: 1.4rem;
-      text-align: center;
-    }
-    .form-wrapper h2 {
-      margin: 2rem 0 0.5rem;
-      font-size: 1.1rem;
-      color: #3a6ea5;
-    }
-    .registration-form {
-      display: grid;
-      gap: 1rem;
-    }
-    .field-group {
-      display: flex;
-      flex-direction: column;
-    }
-    .field-group label {
-      font-weight: 500;
-      color: #3a6ea5;
-      margin-bottom: 0.35rem;
-    }
-    .field-group label .required {
-      color: #d32f2f;
-      margin-left: 2px;
-    }
-    .field-group input,
-    .field-group select,
-    .field-group textarea {
-      padding: 0.7rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      box-sizing: border-box;
-    }
-    .section-grid {
-      display: grid;
-      gap: 1rem;
-    }
-    .section-grid.two-column {
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    }
-    .section-grid.single-column {
-      grid-template-columns: 1fr;
-    }
-    .extra-person {
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 1rem;
-      background: #fafafa;
-    }
-    .extra-person h3 {
-      margin: 0 0 0.6rem;
-      font-size: 1rem;
-      color: #3a6ea5;
-    }
-    textarea {
-      min-height: 120px;
-      resize: vertical;
-    }
-    .submit-btn {
-      background: #ffd600;
-      color: #222;
-      border: none;
-      padding: 0.9rem 2.2rem;
-      font-size: 1.1rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: background 0.2s;
-      justify-self: flex-start;
-    }
-    .submit-btn:hover {
-      background: #ffe066;
-    }
-    @media (max-width: 768px) {
-      body {
-        background: #f7f7f7;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 1rem 0.75rem 1.5rem;
-        min-height: 100vh;
-      }
-      .form-wrapper {
-        margin: 0 auto;
-        width: 100%;
-        max-width: 100%;
-      }
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="form-wrapper">
-    <h1>Aanmeldingsformulier Duc'dalf - Parc le Duc</h1>
-    <form class="registration-form" id="aanmeldingForm" action="https://formsubmit.co/ducdalf.languedoc@gmail.com" method="POST" autocomplete="off">
-      <input type="hidden" name="_subject" value="Nieuwe huurder-aanmelding Duc'dalf" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://vakantiehuis-ducdalf.nl/aanmeldingvoltooid/" />
 
-      <h2>Verblijfsgegevens</h2>
-      <div class="section-grid single-column">
-        <div class="field-group">
-          <label for="aankomstdatum">Aankomstdatum <span class="required">*</span></label>
-          <input type="date" id="aankomstdatum" name="aankomstdatum" required>
-        </div>
-        <div class="field-group">
-          <label for="vertrekdatum">Vertrekdatum <span class="required">*</span></label>
-          <input type="date" id="vertrekdatum" name="vertrekdatum" required>
-        </div>
-        <div class="field-group">
-          <label for="personen">Aantal personen <span class="required">*</span></label>
-          <input type="number" id="personen" name="aantal_personen" min="1" max="6" required>
-        </div>
-        <div class="field-group">
-          <label for="aanhef">Aanhef <span class="required">*</span></label>
-          <select id="aanhef" name="aanhef" required>
-            <option value="">Maak een keuze</option>
-            <option value="Dhr.">Dhr.</option>
-            <option value="Mevr.">Mevr.</option>
-          </select>
-        </div>
-        <div class="field-group">
-          <label for="voornaam">Voornaam <span class="required">*</span></label>
-          <input type="text" id="voornaam" name="voornaam" required>
-        </div>
-        <div class="field-group">
-          <label for="achternaam">Achternaam</label>
-          <input type="text" id="achternaam" name="achternaam" required>
-        </div>
-        <div class="field-group">
-          <label for="adres">Adres <span class="required">*</span></label>
-          <input type="text" id="adres" name="adres" required>
-        </div>
-        <div class="field-group">
-          <label for="postcode">Postcode</label>
-          <input type="text" id="postcode" name="postcode" required>
-        </div>
-        <div class="field-group">
-          <label for="plaats">Plaats <span class="required">*</span></label>
-          <input type="text" id="plaats" name="plaats" required>
-        </div>
-        <div class="field-group">
-          <label for="vast">Tel.nr. vast</label>
-          <input type="text" id="vast" name="telefoon_vast" placeholder="-">
-        </div>
-        <div class="field-group">
-          <label for="mobiel">Tel.nr. mobiel</label>
-          <input type="text" id="mobiel" name="telefoon_mobiel" required>
-        </div>
-        <div class="field-group">
-          <label for="email">Email <span class="required">*</span></label>
-          <input type="email" id="email" name="email" required>
-        </div>
-        <div class="field-group">
-          <label for="kenteken">Kenteken auto</label>
-          <input type="text" id="kenteken" name="kenteken_auto">
-        </div>
-        <div class="field-group">
-          <label for="paspoort">Nummer paspoort</label>
-          <input type="text" id="paspoort" name="nummer_paspoort">
-        </div>
-        <div class="field-group">
-          <label for="geboortedatum">Geboortedatum</label>
-          <input type="date" id="geboortedatum" name="geboortedatum" required>
-        </div>
-        <div class="field-group">
-          <label for="geboorteplaats">Geboorteplaats <span class="required">*</span></label>
-          <input type="text" id="geboorteplaats" name="geboorteplaats" required>
-        </div>
+  <nav class="nav light" id="nav">
+    <div class="nav-inner">
+      <div class="nav-brand"><a href="./">DUC&rsquo;DALF <span>&mdash;</span> LANGUEDOC</a></div>
+      <div class="nav-links" id="navLinks">
+        <a href="./">Home</a>
+        <a href="huis/">Het huis</a>
+        <a href="./#omgeving">De omgeving</a>
+        <a href="./#park">Parc le Duc</a>
+        <a href="boeken/">Boeken</a>
+        <a href="./#contact">Contact</a>
       </div>
+      <div class="nav-cta-wrap"></div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-      <h2>Extra personen (max. 5)</h2>
-      <div class="section-grid">
-        <div class="extra-person">
-          <h3>Persoon 1</h3>
-          <div class="field-group">
-            <label for="extra1_naam">Naam</label>
-            <input type="text" id="extra1_naam" name="extra_persoon_1_naam">
+  <section class="page-title">
+    <div class="container">
+      <span class="eyebrow">Aanmelding</span>
+      <h1>Aanmeldingsformulier</h1>
+      <p>Vul de gegevens hieronder in. Velden met een <span class="required">*</span> zijn verplicht.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="form-wide">
+        <form id="aanmeldingForm" method="POST" action="https://formsubmit.co/ducdalf.languedoc@gmail.com" autocomplete="off">
+          <input type="hidden" name="_subject" value="Nieuwe huurder-aanmelding Duc'dalf" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_next" value="https://vakantiehuis-ducdalf.nl/aanmeldingvoltooid/" />
+
+          <h2>Verblijfsgegevens</h2>
+          <div class="grid-2">
+            <div class="form-row"><label for="aankomstdatum">Aankomstdatum <span class="required">*</span></label><input type="date" id="aankomstdatum" name="aankomstdatum" required></div>
+            <div class="form-row"><label for="vertrekdatum">Vertrekdatum <span class="required">*</span></label><input type="date" id="vertrekdatum" name="vertrekdatum" required></div>
+            <div class="form-row"><label for="personen">Aantal personen <span class="required">*</span></label><input type="number" id="personen" name="aantal_personen" min="1" max="6" required></div>
+            <div class="form-row"><label for="aanhef">Aanhef <span class="required">*</span></label><select id="aanhef" name="aanhef" required><option value="">Maak een keuze</option><option value="Dhr.">Dhr.</option><option value="Mevr.">Mevr.</option></select></div>
+            <div class="form-row"><label for="voornaam">Voornaam <span class="required">*</span></label><input type="text" id="voornaam" name="voornaam" required></div>
+            <div class="form-row"><label for="achternaam">Achternaam</label><input type="text" id="achternaam" name="achternaam" required></div>
+            <div class="form-row"><label for="adres">Adres <span class="required">*</span></label><input type="text" id="adres" name="adres" required></div>
+            <div class="form-row"><label for="postcode">Postcode</label><input type="text" id="postcode" name="postcode" required></div>
+            <div class="form-row"><label for="plaats">Plaats <span class="required">*</span></label><input type="text" id="plaats" name="plaats" required></div>
+            <div class="form-row"><label for="vast">Tel.nr. vast</label><input type="text" id="vast" name="telefoon_vast" placeholder="-"></div>
+            <div class="form-row"><label for="mobiel">Tel.nr. mobiel</label><input type="text" id="mobiel" name="telefoon_mobiel" required></div>
+            <div class="form-row"><label for="email">Email <span class="required">*</span></label><input type="email" id="email" name="email" required></div>
+            <div class="form-row"><label for="kenteken">Kenteken auto</label><input type="text" id="kenteken" name="kenteken_auto"></div>
+            <div class="form-row"><label for="paspoort">Nummer paspoort</label><input type="text" id="paspoort" name="nummer_paspoort"></div>
+            <div class="form-row"><label for="geboortedatum">Geboortedatum</label><input type="date" id="geboortedatum" name="geboortedatum" required></div>
+            <div class="form-row"><label for="geboorteplaats">Geboorteplaats <span class="required">*</span></label><input type="text" id="geboorteplaats" name="geboorteplaats" required></div>
           </div>
-          <div class="field-group">
-            <label for="extra1_geboortedatum">Geboortedatum</label>
-            <input type="date" id="extra1_geboortedatum" name="extra_persoon_1_geboortedatum">
+
+          <h2>Extra personen (max. 5)</h2>
+          <div class="grid-3">
+            <div class="person-block"><h3>Persoon 1</h3><div class="form-row"><label for="e1_naam">Naam</label><input type="text" id="e1_naam" name="extra_persoon_1_naam"></div><div class="form-row"><label for="e1_gd">Geboortedatum</label><input type="date" id="e1_gd" name="extra_persoon_1_geboortedatum"></div><div class="form-row"><label for="e1_gp">Geboorteplaats of land</label><input type="text" id="e1_gp" name="extra_persoon_1_geboorteplaats"></div></div>
+            <div class="person-block"><h3>Persoon 2</h3><div class="form-row"><label for="e2_naam">Naam</label><input type="text" id="e2_naam" name="extra_persoon_2_naam"></div><div class="form-row"><label for="e2_gd">Geboortedatum</label><input type="date" id="e2_gd" name="extra_persoon_2_geboortedatum"></div><div class="form-row"><label for="e2_gp">Geboorteplaats of land</label><input type="text" id="e2_gp" name="extra_persoon_2_geboorteplaats"></div></div>
+            <div class="person-block"><h3>Persoon 3</h3><div class="form-row"><label for="e3_naam">Naam</label><input type="text" id="e3_naam" name="extra_persoon_3_naam"></div><div class="form-row"><label for="e3_gd">Geboortedatum</label><input type="date" id="e3_gd" name="extra_persoon_3_geboortedatum"></div><div class="form-row"><label for="e3_gp">Geboorteplaats of land</label><input type="text" id="e3_gp" name="extra_persoon_3_geboorteplaats"></div></div>
+            <div class="person-block"><h3>Persoon 4</h3><div class="form-row"><label for="e4_naam">Naam</label><input type="text" id="e4_naam" name="extra_persoon_4_naam"></div><div class="form-row"><label for="e4_gd">Geboortedatum</label><input type="date" id="e4_gd" name="extra_persoon_4_geboortedatum"></div><div class="form-row"><label for="e4_gp">Geboorteplaats of land</label><input type="text" id="e4_gp" name="extra_persoon_4_geboorteplaats"></div></div>
+            <div class="person-block"><h3>Persoon 5</h3><div class="form-row"><label for="e5_naam">Naam</label><input type="text" id="e5_naam" name="extra_persoon_5_naam"></div><div class="form-row"><label for="e5_gd">Geboortedatum</label><input type="date" id="e5_gd" name="extra_persoon_5_geboortedatum"></div><div class="form-row"><label for="e5_gp">Geboorteplaats of land</label><input type="text" id="e5_gp" name="extra_persoon_5_geboorteplaats"></div></div>
           </div>
-          <div class="field-group">
-            <label for="extra1_geboorteplaats">Geboorteplaats of land</label>
-            <input type="text" id="extra1_geboorteplaats" name="extra_persoon_1_geboorteplaats">
+
+          <h2>In geval van nood waarschuwen</h2>
+          <div class="grid-2">
+            <div class="form-row"><label for="nood_naam">Naam</label><input type="text" id="nood_naam" name="noodcontact_naam" required></div>
+            <div class="form-row"><label for="nood_vast">Tel.nr. vast</label><input type="text" id="nood_vast" name="noodcontact_telefoon_vast"></div>
+            <div class="form-row"><label for="nood_mobiel">Tel.nr. mobiel <span class="required">*</span></label><input type="text" id="nood_mobiel" name="noodcontact_telefoon_mobiel" required></div>
+            <div class="form-row"><label for="nood_email">Email <span class="required">*</span></label><input type="email" id="nood_email" name="noodcontact_email" required></div>
           </div>
-        </div>
-        <div class="extra-person">
-          <h3>Persoon 2</h3>
-          <div class="field-group">
-            <label for="extra2_naam">Naam</label>
-            <input type="text" id="extra2_naam" name="extra_persoon_2_naam">
-          </div>
-          <div class="field-group">
-            <label for="extra2_geboortedatum">Geboortedatum</label>
-            <input type="date" id="extra2_geboortedatum" name="extra_persoon_2_geboortedatum">
-          </div>
-          <div class="field-group">
-            <label for="extra2_geboorteplaats">Geboorteplaats of land</label>
-            <input type="text" id="extra2_geboorteplaats" name="extra_persoon_2_geboorteplaats">
-          </div>
-        </div>
-        <div class="extra-person">
-          <h3>Persoon 3</h3>
-          <div class="field-group">
-            <label for="extra3_naam">Naam</label>
-            <input type="text" id="extra3_naam" name="extra_persoon_3_naam">
-          </div>
-          <div class="field-group">
-            <label for="extra3_geboortedatum">Geboortedatum</label>
-            <input type="date" id="extra3_geboortedatum" name="extra_persoon_3_geboortedatum">
-          </div>
-          <div class="field-group">
-            <label for="extra3_geboorteplaats">Geboorteplaats of land</label>
-            <input type="text" id="extra3_geboorteplaats" name="extra_persoon_3_geboorteplaats">
-          </div>
-        </div>
-        <div class="extra-person">
-          <h3>Persoon 4</h3>
-          <div class="field-group">
-            <label for="extra4_naam">Naam</label>
-            <input type="text" id="extra4_naam" name="extra_persoon_4_naam">
-          </div>
-          <div class="field-group">
-            <label for="extra4_geboortedatum">Geboortedatum</label>
-            <input type="date" id="extra4_geboortedatum" name="extra_persoon_4_geboortedatum">
-          </div>
-          <div class="field-group">
-            <label for="extra4_geboorteplaats">Geboorteplaats of land</label>
-            <input type="text" id="extra4_geboorteplaats" name="extra_persoon_4_geboorteplaats">
-          </div>
-        </div>
-        <div class="extra-person">
-          <h3>Persoon 5</h3>
-          <div class="field-group">
-            <label for="extra5_naam">Naam</label>
-            <input type="text" id="extra5_naam" name="extra_persoon_5_naam">
-          </div>
-          <div class="field-group">
-            <label for="extra5_geboortedatum">Geboortedatum</label>
-            <input type="date" id="extra5_geboortedatum" name="extra_persoon_5_geboortedatum">
-          </div>
-          <div class="field-group">
-            <label for="extra5_geboorteplaats">Geboorteplaats of land</label>
-            <input type="text" id="extra5_geboorteplaats" name="extra_persoon_5_geboorteplaats">
-          </div>
-        </div>
+
+          <h2>Vragen of opmerkingen</h2>
+          <div class="form-row"><label for="opmerkingen">Uw bericht</label><textarea id="opmerkingen" name="opmerkingen" rows="4"></textarea></div>
+
+          <button type="submit" class="btn" style="margin-top:1.4rem;">Aanmelding versturen</button>
+        </form>
       </div>
+    </div>
+  </section>
 
-      <h2>In geval van nood waarschuwen</h2>
-      <div class="section-grid two-column">
-        <div class="field-group">
-          <label for="nood_naam">Naam</label>
-          <input type="text" id="nood_naam" name="noodcontact_naam" required>
-        </div>
-        <div class="field-group">
-          <label for="nood_vast">Tel.nr. vast</label>
-          <input type="text" id="nood_vast" name="noodcontact_telefoon_vast">
-        </div>
-        <div class="field-group">
-          <label for="nood_mobiel">Tel.nr. mobiel <span class="required">*</span></label>
-          <input type="text" id="nood_mobiel" name="noodcontact_telefoon_mobiel" required>
-        </div>
-        <div class="field-group">
-          <label for="nood_email">Email <span class="required">*</span></label>
-          <input type="email" id="nood_email" name="noodcontact_email" required>
-        </div>
-      </div>
+  <footer>
+    <div class="container">
+      <div class="brand">DUC&rsquo;DALF <span>&mdash;</span> LANGUEDOC</div>
+      <div>Vakantiehuis in Parc le Duc, Vacquières</div>
+    </div>
+  </footer>
 
-      <h2>Vragen of opmerkingen</h2>
-      <div class="field-group">
-        <label for="opmerkingen">Uw bericht</label>
-        <textarea id="opmerkingen" name="opmerkingen"></textarea>
-      </div>
-
-      <button type="submit" class="submit-btn">Aanmelding versturen</button>
-    </form>
-  </div>
   <script>
-    document.getElementById('aanmeldingForm').addEventListener('submit', function(e) {
-      const form = this;
-      const submitBtn = form.querySelector('.submit-btn');
-      const originalText = submitBtn.textContent;
-      
-      // Disable button tijdens verzenden om dubbele submits te voorkomen
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Verzenden...';
-      
-      // Laat de normale form submit doorgaan - dit werkt betrouwbaarder op mobiel
-      // De _next parameter zorgt ervoor dat de gebruiker naar de juiste pagina wordt doorgestuurd
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburgerBtn && navLinks) {
+      hamburgerBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+        hamburgerBtn.setAttribute('aria-expanded', !expanded);
+      });
+      navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 900) {
+            navLinks.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', false);
+          }
+        });
+      });
+    }
+    document.getElementById('aanmeldingForm').addEventListener('submit', function() {
+      const btn = this.querySelector('.btn');
+      btn.disabled = true;
+      btn.textContent = 'Verzenden...';
     });
   </script>
 </body>

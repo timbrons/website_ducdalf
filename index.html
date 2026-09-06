@@ -4,887 +4,185 @@
   <script>document.write('<base href="' + (location.hostname.endsWith('.github.io') ? '/website_ducdalf/' : '/') + '">');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vakantiehuis Parc le Duc - Languedoc, Frankrijk</title>
+  <title>Vakantiehuis Parc le Duc &mdash; Duc'dalf Languedoc</title>
   <link rel="icon" href="Huis1.jpg" type="image/jpeg">
   <link rel="apple-touch-icon" href="Huis1.jpg">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f7f7f7;
-      color: #222;
-    }
-    nav {
-      background: #e3f0fa;
-      padding: 0.5rem 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-    }
-    .nav-container {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 1rem;
-      position: relative;
-    }
-    .nav-links {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-    .nav-links a {
-      color: #3a6ea5;
-      text-decoration: none;
-      margin-left: 2rem;
-      font-weight: 500;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover {
-      color: #285080;
-    }
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      background: none;
-    }
-    .hero-bg {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      width: 100%; height: 100%;
-      background-size: cover;
-      background-position: center;
-      transition: none;
-      z-index: 0;
-    }
-    .hero-bg.next {
-      left: 100%;
-      transition: left 2s cubic-bezier(0.77,0,0.175,1);
-      z-index: 1;
-    }
-    .hero-bg.active {
-      left: 0;
-      transition: left 2s cubic-bezier(0.77,0,0.175,1);
-      z-index: 2;
-    }
-    .hero-bg.out {
-      left: -100%;
-      transition: left 2s cubic-bezier(0.77,0,0.175,1);
-      z-index: 1;
-    }
-    .hero-overlay {
-      position: absolute;
-      z-index: 3;
-      background: rgba(34, 56, 90, 0.45);
-      color: #fff;
-      padding: 2.5rem 2rem;
-      border-radius: 10px;
-      margin-left: 5vw;
-      max-width: 420px;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-    }
-    .hero-mobile-text {
-      display: none;
-    }
-    .hero-overlay h1 {
-      margin: 0 0 1rem 0;
-      font-size: 2.2rem;
-      letter-spacing: 1px;
-    }
-    .hero-overlay p {
-      margin: 0 0 1.5rem 0;
-      font-size: 1.1rem;
-    }
-    .hero-overlay .booking-btn {
-      background: #ffd600;
-      color: #222;
-      border: none;
-      padding: 0.9rem 2.2rem;
-      font-size: 1.1rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: background 0.2s;
-    }
-    .hero-overlay .booking-btn:hover {
-      background: #ffe066;
-    }
-    .section-title {
-      text-align: center;
-      margin: 3rem 0 2rem 0;
-      font-size: 1.6rem;
-      color: #3a6ea5;
-      letter-spacing: 1px;
-      font-weight: bold;
-    }
-    .top-title {
-      margin-top: 1.2rem;
-      margin-bottom: 1.2rem;
-    }
-    .hero-mobile-block {
-      display: none;
-    }
-    .columns {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      max-width: 1100px;
-      margin: 0 auto 3rem auto;
-      flex-wrap: wrap;
-    }
-    .column {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      width: 320px;
-      min-width: 260px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.2rem;
-    }
-    .logo-card {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-      margin-bottom: 0;
-      margin-top: 0;
-      width: 100%;
-      height: 180px;
-      min-height: 180px;
-      max-height: 180px;
-    }
-    .logo-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-    .column img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 0;
-    }
-    .column h3 {
-      margin: 1rem 0 0.5rem 0;
-      color: #3a6ea5;
-      font-size: 1.1rem;
-    }
-    .column p {
-      margin: 0 1rem 1.2rem 1rem;
-      font-size: 1rem;
-      text-align: center;
-    }
-    .contact-form {
-      background: #fff;
-      max-width: 400px;
-      margin: 0;
-      padding: 2rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      flex: 1 1 380px;
-      height: auto;
-      min-height: 100%;
-    }
-    .contact-form h2 {
-      margin-top: 0;
-      font-size: 1.3rem;
-      color: #3a6ea5;
-    }
-    .contact-form label {
-      display: block;
-      margin: 1rem 0 0.3rem 0;
-      font-weight: 500;
-    }
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 0.7rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      margin-bottom: 0.5rem;
-      box-sizing: border-box;
-    }
-    .contact-form button {
-      background: #3a6ea5;
-      color: #fff;
-      border: none;
-      padding: 0.8rem 2rem;
-      border-radius: 20px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 1rem;
-      transition: background 0.2s;
-      margin-bottom: 1.5rem;
-    }
-    .contact-form button:hover {
-      background: #285080;
-    }
-    .success-message {
-      color: #2e7d32;
-      margin-top: 1rem;
-      text-align: center;
-      display: none;
-    }
-    .contact-area {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      gap: 2rem;
-      max-width: 900px;
-      margin: 2rem auto 3rem auto;
-      flex-wrap: wrap;
-    }
-    .address-section {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      padding: 2rem 1.5rem;
-      max-width: 400px;
-      min-width: 260px;
-      flex: 1 1 380px;
-      box-sizing: border-box;
-      height: auto;
-      min-height: 100%;
-    }
-    .address-section h2 {
-      margin-top: 0;
-      font-size: 1.1rem;
-      color: #3a6ea5;
-      letter-spacing: 0.5px;
-    }
-    .address-section p {
-      margin: 0.5rem 0 1rem 0;
-      font-size: 1rem;
-    }
-    .address-section small {
-      color: #555;
-      font-size: 0.95em;
-    }
-    .address-section iframe {
-      width: 100%;
-      height: 200px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      width: 40px;
-      height: 40px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      margin-right: 1rem;
-      z-index: 20;
-    }
-    .hamburger span {
-      display: block;
-      width: 28px;
-      height: 4px;
-      margin: 4px 0;
-      background: #3a6ea5;
-      border-radius: 2px;
-      transition: 0.3s;
-    }
-    .logo-img-desktop {
-      display: block !important;
-    }
-    .logo-img-mobile {
-      display: none !important;
-    }
-    .nav-title-mobile {
-      display: none;
-      font-size: 1.1rem;
-      color: #3a6ea5;
-      font-weight: bold;
-      white-space: nowrap;
-      letter-spacing: 1px;
-      text-align: center;
-      width: 100%;
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .section-title-desktop {
-      display: block;
-    }
-    .section-title-mobile {
-      display: none;
-    }
-    @media (max-width: 900px) {
-      .columns {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero {
-        height: 260px;
-      }
-      .hero-overlay {
-        padding: 1.2rem 1rem;
-        margin-left: 2vw;
-        max-width: 95vw;
-        text-align: center;
-        font-size: 1rem;
-      }
-      .contact-area {
-        flex-direction: column;
-        align-items: stretch;
-      }
-      .address-section, .contact-form {
-        max-width: 100%;
-        min-width: 0;
-      }
-      .nav-links {
-        flex-direction: column;
-        align-items: center;
-      }
-      .nav-links a {
-        margin: 0.5rem 0;
-        font-size: 1.1rem;
-      }
-    }
-    @media (min-width: 601px) {
-      .hero-overlay {
-        position: absolute;
-        z-index: 3;
-        background: rgba(34, 56, 90, 0.45);
-        color: #fff;
-        padding: 2.5rem 2rem;
-        border-radius: 10px;
-        margin-left: 5vw;
-        max-width: 420px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-      }
-      .nav-title-mobile {
-        display: none !important;
-      }
-    }
-    @media (max-width: 600px), (max-height: 500px) {
-      nav {
-        width: 100%;
-        max-width: none;
-        margin: 0;
-      }
-      .nav-container {
-        width: 100%;
-        max-width: none;
-        margin: 0 auto;
-        justify-content: flex-start;
-        padding-left: 0.2rem;
-      }
-      .nav-title-mobile {
-        display: flex;
-      }
-      .hamburger {
-        margin-right: 0;
-        margin-left: 0;
-        align-self: flex-start;
-      }
-      .hero {
-        display: none;
-      }
-      .hero-bg {
-        display: none;
-      }
-      .hero-overlay {
-        display: none;
-      }
-      .hero-mobile-text {
-        display: block;
-        background: rgba(34, 56, 90, 0.10);
-        color: #222;
-        border-radius: 10px;
-        margin: 0.7rem auto 0.7rem auto;
-        padding: 1.2rem 0.7rem;
-        max-width: 98vw;
-        width: 98vw;
-        text-align: center;
-        font-size: 1rem;
-        box-sizing: border-box;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.05);
-      }
-      .hero-overlay h1 {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-      }
-      .section-title {
-        font-size: 1.1rem;
-      }
-      .column {
-        width: 98vw;
-        min-width: 0;
-        padding-bottom: 0.7rem;
-      }
-      .column img {
-        width: 100vw;
-        max-width: 100vw;
-        height: 180px;
-        min-height: 180px;
-        max-height: 180px;
-        object-fit: cover;
-        border-radius: 0;
-        display: block;
-      }
-      .logo-card {
-        height: 180px;
-        min-height: 180px;
-        max-height: 180px;
-        padding: 18px 0;
-        margin: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      .logo-card img {
-        width: 100%;
-        max-width: 100%;
-        height: 100%;
-        min-height: 0;
-        max-height: 100%;
-        object-fit: contain;
-        display: block;
-        margin: 0;
-        background: none;
-      }
-      .contact-form input, .contact-form textarea, .contact-form button {
-        font-size: 1.1rem;
-        padding: 1rem;
-        margin-bottom: 0.5rem;
-      }
-      .booking-btn {
-        font-size: 1rem;
-        padding: 0.7rem 1.2rem;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 56px;
-        left: 0;
-        width: 100%;
-        background: #e3f0fa;
-        flex-direction: column;
-        align-items: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-        z-index: 10;
-      }
-      .nav-links.open {
-        display: flex;
-      }
-      .nav-links a {
-        margin: 1rem 0;
-        font-size: 1.2rem;
-      }
-      .hero-mobile-block {
-        display: none;
-      }
-      .logo-img-desktop {
-        display: none !important;
-      }
-      .logo-img-mobile {
-        display: block !important;
-      }
-      .address-section {
-        margin-bottom: 2rem;
-        height: 500px;
-      }
-      .card {
-        background: white;
-        Display: flex;
-        height: auto;
-      }
-      .columns .column:last-child {
-        margin-bottom: 1.2rem;
-      }
-      .address-section iframe {
-        width: 100% !important;
-        min-width: 0;
-        max-width: 100%;
-        padding: 20px;
-        border-radius: 8px;
-        display: block;
-        margin: 1500;
-      }
-      .address-section {
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-        padding: 1.2rem;
-        margin: 1.2rem 0;
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-      }
-      .address-section iframe {
-        width: 100%;
-        border-radius: 8px;
-        display: block;
-        margin-top: 1rem;
-        padding: 0;
-      }
-      .contact-form button {
-        margin-bottom: 0 !important;
-      }
-      .contact-form {
-        margin-top: 3rem !important;
-        padding-bottom: 3rem !important;
-      }
-      .address-section, .contact-form {
-        background: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
-      }
-      .form-bottom-spacer {
-        height: 3rem;
-      }
-      .address-section, .contact-form {
-        margin-top: 0rem;
-      }
-      .section-title-desktop {
-        display: none;
-      }
-      .section-title-mobile {
-        display: block;
-        background: #e3f0fa;
-        border-radius: 10px;
-        min-height: 10px;
-        height: 18px;
-        padding: 0;
-        margin-bottom: 0 !important;
-        padding-bottom: 0 !important;
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-      }
-      .columns .column + .column {
-        margin-top: 1.2rem;
-      }
-      .columns .column:first-child {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-      }
-      .columns .column:first-child img {
-        margin-top: 0 !important;
-        padding-top: 0 !important;
-      }
-      .columns {
-        margin-top: 3.5rem;
-      }
-    }
-    @media (max-height: 500px) and (orientation: landscape) {
-      .hero,
-      .hero-bg {
-        display: none;
-      }
-      .hero-mobile-text {
-        max-width: 92vw;
-        width: 92vw;
-      }
-    }
-    @media (max-width: 500px) {
-      .hero {
-        min-height: unset;
-        height: auto;
-      }
-      .hero-bg {
-        min-height: 120px;
-        height: 120px;
-      }
-      .hero-overlay {
-        padding: 0.7rem 0.2rem;
-        font-size: 0.95rem;
-        max-width: 99vw;
-        width: 99vw;
-      }
-      .hero-overlay h1 {
-        font-size: 0.95rem;
-      }
-      .column img {
-        min-height: 80px;
-      }
-      .logo-card {
-        min-height: 40px;
-        max-height: 80px;
-      }
-      .logo-card img {
-        max-height: 300px;
-      }
-    }
-    .address-section, .contact-form {
-      padding: 1rem;
-      max-width: 100%;
-      margin: 0 auto;
-      border-radius: 12px;
-      background: #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      width: 100%;
-      box-sizing: border-box;
-    }
-    .address-section iframe {
-      width: 100%;
-      border-radius: 8px;
-      display: block;
-      margin: 1rem 0 0 0;
-    }
-    .contact-form button {
-      margin-bottom: 0;
-      margin-top: 1rem;
-    }
-    .booking-form {
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-      margin-top: 1.2rem;
-    }
-    .booking-form label {
-      font-weight: 500;
-      color: #3a6ea5;
-      margin-bottom: 0.2rem;
-    }
-    .booking-form input,
-    .booking-form textarea {
-      padding: 0.7rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      margin-bottom: 0.2rem;
-      box-sizing: border-box;
-    }
-    .booking-form button.booking-btn {
-      background: #ffd600;
-      color: #222;
-      border: none;
-      padding: 0.9rem 2.2rem;
-      font-size: 1.1rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: bold;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      transition: background 0.2s;
-      margin-top: 0.5rem;
-      width: fit-content;
-      align-self: flex-start;
-    }
-    .booking-form button.booking-btn:hover {
-      background: #ffe066;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2147483647 !important;
-      left: 0;
-      top: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: auto;
-      background: rgba(0,0,0,0.4);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-content {
-      background: #fff;
-      padding: 2rem 1.2rem 1.2rem 1.2rem;
-      border-radius: 12px;
-      max-width: 400px;
-      width: 90vw;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-      position: relative;
-      z-index: 2147483648 !important;
-      margin: 0;
-      max-height: 90vh;
-      overflow-y: auto;
-      padding-bottom: 2rem;
-    }
-    .close-modal {
-      position: absolute;
-      top: 0.7rem;
-      right: 1.2rem;
-      font-size: 2rem;
-      color: #3a6ea5;
-      cursor: pointer;
-      font-weight: bold;
-    }
-    .modal h2 {
-      margin-top: 0;
-      color: #3a6ea5;
-      font-size: 1.3rem;
-      text-align: center;
-    }
-    .address-section h3, .contact-form h3 {
-      color: #3a6ea5;
-    }
-  </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav>
-    <div class="nav-container">
-      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <span class="nav-title-mobile">Duc'dalf Languedoc</span>
+
+  <nav class="nav hero-over" id="nav">
+    <div class="nav-inner">
+      <div class="nav-brand">DUC&rsquo;DALF <span>&mdash;</span> LANGUEDOC</div>
       <div class="nav-links" id="navLinks">
         <a href="./">Home</a>
         <a href="huis/">Het huis</a>
         <a href="#omgeving">De omgeving</a>
-        <a href="#ons">Over ons</a>
+        <a href="#park">Parc le Duc</a>
         <a href="boeken/">Boeken</a>
         <a href="#contact">Contact</a>
       </div>
+      <div class="nav-cta-wrap">
+        <a href="huis/" class="btn">Meer info</a>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <section class="hero" id="home">
-    <div class="hero-bg active" style="background-image: url('vacquires.jpg');"></div>
-    <div class="hero-bg next" style="background-image: url('picstloup.jpg');"></div>
-    <div class="hero-overlay">
-      <h1>Mooi en gezellig vakantiehuis in<br>Zuid-Frankrijk</h1>
+  <header class="hero" id="home">
+    <div class="hero-img" style="background-image: url('vacquires.jpg');"></div>
+    <div class="hero-card">
+      <span class="eyebrow">Parc le Duc &middot; Languedoc</span>
+      <h1>Mooi en gezellig vakantiehuis in Zuid-Frankrijk</h1>
       <p>Geniet van de rust, de natuur en het comfort in ons sfeervolle huis op Parc le Duc, Zuid-Frankrijk.</p>
-      <a href="huis/" target="_blank" class="booking-btn" style="margin-top: 1.5rem; display: inline-block;">Meer info</a>
+      <a href="huis/" class="btn">Meer info</a>
     </div>
-  </section>
-  <div class="hero-mobile-block">
-    <h1>Mooi en gezellig vakantiehuis in Zuid-Frankrijk</h1>
-    <p>Geniet van de rust, de natuur en het comfort in ons sfeervolle huis op Parc le Duc.</p>
-    <a href="huis/" target="_blank" class="booking-btn">Meer info</a>
-  </div>
-  <div class="section-title section-title-desktop">Duc'dalf Languedoc</div>
-  <section class="columns">
-    <a href="huis/" style="text-decoration:none;color:inherit;">
-      <div class="column" style="cursor:pointer;">
-        <img src="Foto1.jpg" alt="Vakantiehuis Parc le Duc">
-        <h3>Het huis</h3>
-        <p>Ons huis biedt plaats aan 6 personen, heeft een ruime tuin, drie slaapkamers, een moderne keuken en een zonnig terras.</p>
+  </header>
+
+  <section id="overzicht">
+    <div class="container">
+      <div class="cards">
+
+        <a href="huis/" class="card">
+          <div class="card-media"><img src="Foto1.jpg" alt="Vakantiehuis Duc'dalf op Parc le Duc"></div>
+          <div class="card-body">
+            <span class="eyebrow">Onze bungalow</span>
+            <h3>Het huis</h3>
+            <p>Ons huis biedt plaats aan 6 personen, heeft een ruime tuin, drie slaapkamers, een moderne keuken en een zonnig terras.</p>
+            <span class="card-link">Bekijk het huis</span>
+          </div>
+        </a>
+
+        <a href="#omgeving" class="card">
+          <div class="card-media"><img src="herault.jpg" alt="Rivier de H&eacute;rault"></div>
+          <div class="card-body">
+            <span class="eyebrow">Rondom</span>
+            <h3>De omgeving</h3>
+            <p>Ontdek de prachtige natuur, pittoreske dorpjes, de leuke marktjes en het heerlijke klimaat van de Languedoc-regio.</p>
+            <span class="card-link">Lees meer</span>
+          </div>
+        </a>
+
+        <a href="https://www.parc-le-duc.com/" target="_blank" rel="noopener" class="card">
+          <div class="card-media logo"><img src="logopld.png" alt="Parc le Duc logo"></div>
+          <div class="card-body">
+            <span class="eyebrow">Ons vakantiepark</span>
+            <h3>Parc le Duc</h3>
+            <p>Parc le Duc is een bijzonder Nederlands vakantiepark in Zuid-Frankrijk met een fijne, kindvriendelijke en gemoedelijke sfeer.</p>
+            <span class="card-link">parc-le-duc.com</span>
+          </div>
+        </a>
+
       </div>
-    </a>
-    <div class="column">
-      <img src="herault.jpg" alt="Rivier de Herault" style="width:100%;height:180px;object-fit:cover;">
-      <h3>De omgeving</h3>
-      <p>Ontdek de prachtige natuur, pittoreske dorpjes, de leuke marktjes en het heerlijke klimaat van de Languedoc-regio</p>
     </div>
-    <a href="https://www.parc-le-duc.com/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;">
-      <div class="column" style="cursor:pointer;">
-        <div class="logo-card">
-          <img src="logopld.png" alt="Parc le Duc logo" class="logo-img-desktop">
-          <img src="logo_parcleduc.png" alt="Parc le Duc logo nieuw" class="logo-img-mobile">
-        </div>
-        <h3 style="text-align:center; width:100%;">Parc le Duc</h3>
-        <p style="text-align:center;">Parc le Duc is een bijzonder Nederlands vakantiepark in Zuid-Frankrijk met een fijne, kindvriendelijke en gemoedelijke sfeer.</p>
-      </div>
-    </a>
   </section>
 
-  <div class="contact-area">
-    <div class="address-section">
-      <h3>Adres</h3>
-      <p>Parc le Duc, Languedoc<br>Route de Fontanes, RD109<br>34270 Vacquières, France</p>
-      <small>
-        Parkeren kan gratis naast het vakantiehuis of op het parkeerterrein bij de ingang van het park.
-      </small>
-      <iframe src="https://www.google.com/maps?q=Parc+le+Duc,+Route+de+Fontanes,+RD109,+34270+Vacqui%C3%A8res,+France&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <section id="omgeving" class="warm">
+    <div class="container">
+      <div class="split">
+        <div class="split-media"><img src="herault.jpg" alt="De H&eacute;rault-regio"></div>
+        <div>
+          <span class="eyebrow" style="display:block; margin-bottom:0.8rem;">De omgeving</span>
+          <h2>De Languedoc</h2>
+          <p style="margin-top:1.4rem; color: var(--ink-soft); font-size: 1.05rem; line-height:1.7;">
+            Ontdek de prachtige natuur, pittoreske dorpjes, de leuke marktjes en het heerlijke klimaat van de Languedoc-regio.
+          </p>
+        </div>
+      </div>
     </div>
-    <form class="contact-form" id="contact" autocomplete="off" method="POST" action="https://formsubmit.co/ducdalf.languedoc@gmail.com">
-      <input type="hidden" name="_subject" value="Contactformulier via website" />
-      <input type="hidden" name="_next" value="https://vakantiehuis-ducdalf.nl/contact/" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_template" value="box" />
-      <h3>Contact</h3>
-      <label for="naam">Naam</label>
-      <input type="text" id="naam" name="naam" required>
-      <label for="email">E-mail</label>
-      <input type="email" id="email" name="email" required>
-      <label for="bericht">Bericht</label>
-      <textarea id="bericht" name="bericht" rows="4" required></textarea>
-      <button type="submit">Verzenden</button>
-    </form>
-  </div>
+  </section>
+
+  <section id="park">
+    <div class="container">
+      <div class="split">
+        <div>
+          <span class="eyebrow" style="display:block; margin-bottom:0.8rem;">Ons vakantiepark</span>
+          <h2>Parc le Duc</h2>
+          <p style="margin-top:1.4rem; color: var(--ink-soft); font-size: 1.05rem; line-height:1.7;">
+            Parc le Duc is een bijzonder Nederlands vakantiepark in Zuid-Frankrijk met een fijne, kindvriendelijke en gemoedelijke sfeer.
+          </p>
+          <div style="margin-top: 1.8rem;">
+            <a href="https://www.parc-le-duc.com/" target="_blank" rel="noopener" class="btn ghost">Bezoek parc-le-duc.com</a>
+          </div>
+        </div>
+        <div class="split-media" style="aspect-ratio: 4/3; background: linear-gradient(135deg, #FBF6EA 0%, #F0E5CE 100%); display: grid; place-items: center; padding: 3rem;">
+          <img src="logopld.png" alt="Parc le Duc logo" style="max-width: 70%; max-height: 70%; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="warm">
+    <div class="container">
+      <div class="section-title-row">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>Kom langs of stuur een bericht</h2>
+        </div>
+      </div>
+
+      <div class="adres-grid">
+        <div class="adres-block">
+          <div class="label">Adres</div>
+          <address>
+            Parc le Duc, Languedoc<br>
+            Route de Fontanes, RD109<br>
+            34270 Vacquières, France
+          </address>
+          <small>Parkeren kan gratis naast het vakantiehuis of op het parkeerterrein bij de ingang van het park.</small>
+          <iframe
+            src="https://www.google.com/maps?q=Parc+le+Duc,+Route+de+Fontanes,+RD109,+34270+Vacqui%C3%A8res,+France&output=embed"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Kaart Parc le Duc"></iframe>
+        </div>
+
+        <div class="contact-form-block">
+          <div class="label">Stuur een bericht</div>
+          <form autocomplete="off" method="POST" action="https://formsubmit.co/ducdalf.languedoc@gmail.com">
+            <input type="hidden" name="_subject" value="Contactformulier via website" />
+            <input type="hidden" name="_next" value="https://vakantiehuis-ducdalf.nl/contact/" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="box" />
+            <div class="form-row">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" required>
+            </div>
+            <div class="form-row">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+              <label for="bericht">Bericht</label>
+              <textarea id="bericht" name="bericht" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn" style="margin-top:0.4rem;">Verzenden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="brand">DUC&rsquo;DALF <span>&mdash;</span> LANGUEDOC</div>
+      <div>Vakantiehuis in Parc le Duc, Vacquières</div>
+    </div>
+  </footer>
 
   <script>
-    // Vervang IMAGE1 en IMAGE2 door de juiste bestandsnamen
-    document.querySelectorAll('img').forEach(function(el) {
-      if (el.src && el.src.includes('IMAGE1')) el.src = 'huis1.jpg';
-      if (el.src && el.src.includes('IMAGE2')) el.src = 'huis2.jpg';
-    });
-
-    // Hero background swipe slideshow
-    const heroImages = [
-      'vacquires.jpg',
-      'sommieres.jpg',
-      'strand.jpg',
-      'zwembad.jpg',
-      'herault.jpg',
-      'receptie.jpg'
-    ];
-    let heroIndex = 0;
-    let nextIndex = 1;
-    const hero = document.querySelector('.hero');
-    let bgDivs = hero ? hero.querySelectorAll('.hero-bg') : [];
-
-    function swipeHeroBg() {
-      if (!hero || bgDivs.length < 2 || getComputedStyle(hero).display === 'none') {
-        return;
-      }
-      // Always reset classes and positions
-      bgDivs[0].className = 'hero-bg active';
-      bgDivs[1].className = 'hero-bg next';
-      bgDivs[1].style.left = '100%';
-      // Set next image
-      bgDivs[1].style.backgroundImage = `url('${heroImages[nextIndex]}')`;
-      // Animate
-      setTimeout(() => {
-        bgDivs[0].className = 'hero-bg out';
-        bgDivs[1].className = 'hero-bg active';
-        bgDivs[1].style.left = '0';
-        bgDivs[0].style.left = '-100%';
-        // After animation, swap divs
-        setTimeout(() => {
-          bgDivs[0].className = 'hero-bg next';
-          bgDivs[0].style.left = '100%';
-          // Move the old active to the end
-          hero.appendChild(bgDivs[0]);
-          // NodeList is live, so re-query
-          bgDivs = hero.querySelectorAll('.hero-bg');
-        }, 2000);
-      }, 20);
-      // Update indices
-      heroIndex = nextIndex;
-      nextIndex = (nextIndex + 1) % heroImages.length;
+    const nav = document.getElementById('nav');
+    function updateNav() {
+      if (window.scrollY > 60) nav.classList.add('solid');
+      else nav.classList.remove('solid');
     }
-    if (hero && bgDivs.length >= 2 && getComputedStyle(hero).display !== 'none') {
-      setInterval(swipeHeroBg, 7000);
-    }
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
 
-    // Hamburger menu functionaliteit
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const navLinks = document.getElementById('navLinks');
     if (hamburgerBtn && navLinks) {
@@ -893,33 +191,14 @@
         const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
         hamburgerBtn.setAttribute('aria-expanded', !expanded);
       });
-      // Sluit menu na klikken op een link (alleen mobiel)
       navLinks.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
-          if (window.innerWidth <= 600) {
+          if (window.innerWidth <= 900) {
             navLinks.classList.remove('open');
             hamburgerBtn.setAttribute('aria-expanded', false);
           }
         });
       });
-    }
-
-    // Modal functionaliteit
-    const openBookingModal = document.getElementById('openBookingModal');
-    const bookingModal = document.getElementById('bookingModal');
-    const closeBookingModal = document.getElementById('closeBookingModal');
-    if (openBookingModal && bookingModal && closeBookingModal) {
-      openBookingModal.onclick = function() {
-        bookingModal.style.display = 'block';
-      };
-      closeBookingModal.onclick = function() {
-        bookingModal.style.display = 'none';
-      };
-      window.onclick = function(event) {
-        if (event.target === bookingModal) {
-          bookingModal.style.display = 'none';
-        }
-      };
     }
   </script>
 </body>
