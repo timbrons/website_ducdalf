@@ -223,7 +223,7 @@
       const img = document.getElementById('lightbox-img');
       img.src = src;
       lb.classList.add('open');
-      background: var(--surface-warm);
+      document.body.style.overflow = 'hidden';
     }
     function closeLightbox() {
       document.getElementById('lightbox').classList.remove('open');
