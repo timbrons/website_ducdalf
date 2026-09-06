@@ -263,17 +263,20 @@ p  { margin: 0; max-width: 62ch; }
   min-height: 500px;
 }
 
-/* Contain hero variant — shows the full photo without cropping */
+/* Contain hero variant — shows the full photo without cropping.
+   padding-left reserves the left side for the hero-card so the photo
+   sits entirely to the right of it. */
 .hero.contain .hero-img {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right center;
   background-color: var(--surface-warm);
+  padding-left: clamp(620px, 50vw, 720px);
 }
 .hero.contain .hero-img::after { display: none; }
 
-/* Mobile: stack the hero (photo on top, card below in flow) */
-@media (max-width: 600px) {
+/* Below desktop: stack the hero (photo on top, card below in flow) */
+@media (max-width: 900px) {
   .hero {
     height: auto;
     min-height: 0;
@@ -285,9 +288,11 @@ p  { margin: 0; max-width: 62ch; }
     width: 100%;
     height: 55vh;
     min-height: 280px;
+    padding-left: 0;
   }
   .hero.contain .hero-img {
     background-position: center;
+    padding-left: 0;
   }
   .hero-card {
     position: relative;
