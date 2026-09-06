@@ -52,6 +52,11 @@
     .section {
       margin-bottom: 2.2rem;
     }
+    .section p {
+      margin: 0 0 1rem 0;
+      font-size: 1.05rem;
+      line-height: 1.55;
+    }
     .section-title {
       color: #3a6ea5;
       font-size: 1.25rem;
@@ -71,7 +76,7 @@
       font-size: 1.05rem;
     }
     ul.bullet-list li:before {
-      content: '•';
+      content: '\2022';
       color: #3a6ea5;
       position: absolute;
       left: 0;
@@ -108,6 +113,57 @@
     }
     .prijzen-tabel tr:not(:last-child) td {
       border-bottom: 1px solid #e3f0fa;
+    }
+    .photo-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.9rem;
+      margin: 0.4rem 0 0.5rem;
+    }
+    .photo-gallery img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      cursor: zoom-in;
+      transition: transform 0.2s;
+      display: block;
+    }
+    .photo-gallery img:hover {
+      transform: scale(1.02);
+    }
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      align-items: center;
+      justify-content: center;
+      cursor: zoom-out;
+      padding: 2rem;
+      box-sizing: border-box;
+    }
+    #lightbox.open {
+      display: flex;
+    }
+    #lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+    }
+    #lightbox .close-x {
+      position: absolute;
+      top: 1rem;
+      right: 1.4rem;
+      color: #fff;
+      font-size: 2.2rem;
+      font-weight: bold;
+      cursor: pointer;
+      line-height: 1;
+      user-select: none;
     }
     .boek-btn {
       display: inline-block;
@@ -199,16 +255,20 @@
     }
     @media (max-width: 900px) {
       .main-content {
-        padding: 1.2rem 0.3rem 1.2rem 0.3rem;
-        margin: -40px 0.2rem 1.2rem 0.2rem;
+        padding: 1.2rem 0.9rem 1.2rem 0.9rem;
+        margin: -40px 0.5rem 1.2rem 0.5rem;
       }
       .huis-title {
         font-size: 1.3rem;
       }
       .hero-image {
-        max-height: 180px;
+        max-height: 220px;
         border-bottom-left-radius: 18px;
         border-bottom-right-radius: 18px;
+      }
+      .photo-gallery {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 0.6rem;
       }
     }
     @media (max-width: 600px) {
@@ -247,6 +307,9 @@
         margin: 1rem 0;
         font-size: 1.2rem;
       }
+      .photo-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
@@ -256,6 +319,7 @@
       <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
+      <span class="nav-title-mobile">Duc'dalf Languedoc</span>
       <div class="nav-links" id="navLinks">
         <a href="./">Home</a>
         <a href="huis/">Het huis</a>
@@ -266,80 +330,75 @@
       </div>
     </div>
   </nav>
-  <img src="Huis1.jpg" alt="Vakantiehuis Parc le Duc" class="hero-image">
+  <img src="Foto1.jpg" alt="Vakantiehuis Duc'dalf op Parc le Duc" class="hero-image">
   <div class="main-content">
-    <!-- Titel verwijderd zoals gevraagd -->
-    <div class="subtitle"><strong>Geniet van rust, comfort en een prachtige tuin met uitzicht op de heuvels</strong></div>
+    <div class="subtitle"><strong>Ontdek het Franse vakantiegevoel in bungalow 264</strong></div>
+
     <div class="info-block">
-      Het huis ligt aan een rustige doodlopende weg met eigen parkeerplek. U heeft veel privacy, zowel in het huis als in de tuin. De natuurlijke tuin biedt een prachtig uitzicht op de heuvels en bosschages buiten het park.
+      Dit comfortabele vakantiehuis combineert rust, privacy en modern gemak op een unieke locatie aan de rand van Parc le Duc. Met een grote zonnige tuin, twee terrassen en een volledig vernieuwde keuken biedt het alles voor een ontspannen vakantie. Een heerlijke plek voor gezinnen, stellen of iedereen die wil genieten van rust, natuur en ontspanning.
     </div>
+
     <div class="section">
-      <div class="section-title">Indeling</div>
-      <ul class="bullet-list">
-        <li>3 slaapkamers: één met 2-persoonsbed en ombouwkasten, openslaande deuren met hordeuren</li>
-        <li>Één slaapkamer met stapelbed en hang-legkast</li>
-        <li>Één slaapkamer met 2 (onderschuif) eenpersoonsbedden en commode-ladenkast</li>
-        <li>Woonkamer met ruime hoekbank, fauteuil, uittrekbare eettafel, glazen/servieskast en koffietafel</li>
-        <li>Badkamer met douche (glazen scheidingswand), wastafel, wasmachine en toiletkastje</li>
-        <li>Apart toilet</li>
-        <li>Keuken met oven/magnetron, grote koelkast met ruim vriesgedeelte</li>
-        <li>Koffiezetapparaat, waterkoker, royale pannenset, bestek, servies en glaswerk</li>
-        <li>Berging met warmwaterboiler, opbergruimte en elektrische barbecue</li>
-        <li>Voor alle ramen zijn horren geplaatst</li>
-        <li>Voorzien van airco en verwarming</li>
-      </ul>
+      <div class="section-title">Even helemaal weg&hellip;</div>
+      <p>In ons vakantiehuis geniet je van rust, ruimte en het heerlijke Franse buitenleven. De bungalow ligt op een rustige locatie aan de buitenrand van Parc le Duc en biedt aan de achterzijde vrij uitzicht op de natuur. Op de ruime kavel van maar liefst 630 m&sup2; heb je alle ruimte om te ontspannen en te genieten.</p>
+      <p>Overdag zoek je een plekje in de zon of juist de schaduw met een goed boek. Aan het einde van de dag schuif je aan voor een heerlijk diner op het ruime terras. Sluit de dag af onder een indrukwekkende sterrenhemel en ervaar de rust die deze bijzondere plek zo uniek maakt.</p>
     </div>
+
     <div class="section">
-      <div class="section-title">Tuin & Terras</div>
+      <div class="section-title">Ons vakantiehuis biedt</div>
       <ul class="bullet-list">
-        <li>Ruim terras plus overdekt terras</li>
-        <li>Groot zitgedeelte in de tuin</li>
-        <li>Diverse tuintafels, stoelen en parasols</li>
-        <li>Natuurlijke tuin met prachtig uitzicht</li>
-        <li>Elektrische barbecue voor buitengebruik</li>
-        <li>Parkeren op eigen terrein</li>
-      </ul>
-    </div>
-    <div class="section">
-      <div class="section-title">Faciliteiten</div>
-      <ul class="bullet-list">
-        <li>Airco en verwarming</li>
-        <li>Overdekt terras, parasol, terrasmeubilair</li>
-        <li>Ventilator(en)</li>
-        <li>TV met chromecast + afstandsbediening (oa Nederlandse tv-zenders via KPN én streamen), DVD-speler</li>
-        <li>Oven, (combi-)magnetron, grote koelkast, vriezer</li>
+        <li>3 slaapkamers voor maximaal 6 personen (1 masterbedroom, 1 kamer met stapelbed en 1 kamer met twee losse bedden)</li>
+        <li>Ruime tuin van 630 m&sup2;, met veel privacy en vrij uitzicht op de natuur</li>
+        <li>Oprit met eigen parkeerplaats voor 1 auto</li>
+        <li>Twee terrassen, waarvan &eacute;&eacute;n overdekt</li>
+        <li>Nieuwe, moderne U-keuken, geplaatst in 2026</li>
+        <li>Vaatwasser, combimagnetron en Dolce Gusto-koffiemachine</li>
         <li>Wasmachine</li>
-        <li>Waterkoker, koffiezetapparaat</li>
-        <li>Horren voor alle ramen</li>
-        <li>Huisdieren toegestaan</li>
-        <li>Roken niet toegestaan</li>
-        <li>Ruimte voor kinderbedje</li>
+        <li>Airconditioning</li>
+        <li>TV (Nederlandse zenders) en Starlink WIFI</li>
+        <li>Drie fietsen</li>
+        <li>Elektrische barbecue en twee ligbedden</li>
+        <li>Kinderstoel, campingbedje en kinderspeelgoed</li>
       </ul>
     </div>
+
+    <div class="section">
+      <div class="section-title">Foto's</div>
+      <div class="photo-gallery">
+        <img src="Foto2.jpg" alt="Vakantiehuis Duc'dalf" onclick="openLightbox(this.src)">
+        <img src="Foto3.jpg" alt="Vakantiehuis Duc'dalf" onclick="openLightbox(this.src)">
+        <img src="Foto4.jpg" alt="Vakantiehuis Duc'dalf" onclick="openLightbox(this.src)">
+        <img src="Foto5.jpg" alt="Vakantiehuis Duc'dalf" onclick="openLightbox(this.src)">
+        <img src="Foto6.jpg" alt="Vakantiehuis Duc'dalf" onclick="openLightbox(this.src)">
+        <img src="Foto7.jpg" alt="Vakantiehuis Duc'dalf" onclick="openLightbox(this.src)">
+        <img src="Foto8.jpg" alt="Vakantiehuis Duc'dalf" onclick="openLightbox(this.src)">
+        <img src="Foto9.jpg" alt="Vakantiehuis Duc'dalf" onclick="openLightbox(this.src)">
+        <img src="Foto10.jpg" alt="Vakantiehuis Duc'dalf" onclick="openLightbox(this.src)">
+      </div>
+    </div>
+
     <div class="section">
       <div class="section-title">Prijzen</div>
       <table class="prijzen-tabel">
         <tr><th>Periode</th><th>Prijs per week</th></tr>
-        <tr><td>Laagseizoen (1 jan t/m 26 apr & 3 nov t/m 31 dec)</td><td>€ 665</td></tr>
-        <tr><td>Middenseizoen (26 apr t/m 5 jul & 31 aug t/m 3 nov)</td><td>€ 700</td></tr>
-        <tr><td>Hoogseizoen (5 jul t/m 31 aug)</td><td>€ 980</td></tr>
+        <tr><td>Laagseizoen</td><td>&euro; 665,-</td></tr>
+        <tr><td>Middenseizoen</td><td>&euro; 899,-</td></tr>
+        <tr><td>Hoogseizoen</td><td>&euro; 1.099,-</td></tr>
       </table>
       <div class="info-block" style="margin-top:0.7rem;">
-        Prijzen zijn inclusief schoonmaak, exclusief toeristenbelasting (€ 1,- p.p.p.n., tot 18 jaar gratis).<br>
-        <br>
-        <b>Linnenpakket één persoons:</b> € 12,50<br>
-        <b>Linnenpakket twee persoons:</b> € 25,-<br>
-        <b>Handdoekenpakket:</b> € 5,-<br>
-        <br>
-        <span style="font-size:0.97em;">Bij een bestelling van één of meer linnenpakketten wordt één keukenhanddoek en theedoek geleverd.</span>
+        De tarieven zijn inclusief parkkosten en exclusief verplichte schoonmaak (&euro; 64,-) en toeristenbelasting.<br><br>
+        Roken en huisdieren zijn niet toegestaan.
       </div>
     </div>
+
     <div class="section" style="text-align:center;">
       <a href="boeken/" class="boek-btn">Boek nu</a>
     </div>
+
     <div class="section" style="text-align:center;font-size:1.05rem;color:#285080;">
       Vragen? Vul het onderstaande contactformulier in
     </div>
+
     <div id="contact-form" style="max-width:500px;margin:2rem auto 0 auto;">
       <form class="contact-form" autocomplete="off" method="POST" action="https://formsubmit.co/ducdalf.languedoc@gmail.com" style="background:#fff;padding:2rem;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.07);">
         <input type="hidden" name="_subject" value="Contactformulier via huispagina" />
@@ -357,26 +416,47 @@
       </form>
     </div>
   </div>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <span class="close-x" aria-label="Sluiten">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
   <script>
-// Hamburger menu functionaliteit
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const navLinks = document.getElementById('navLinks');
-if (hamburgerBtn && navLinks) {
-  hamburgerBtn.addEventListener('click', function() {
-    navLinks.classList.toggle('open');
-    const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
-    hamburgerBtn.setAttribute('aria-expanded', !expanded);
-  });
-  // Sluit menu na klikken op een link (alleen mobiel)
-  navLinks.querySelectorAll('a').forEach(function(link) {
-    link.addEventListener('click', function() {
-      if (window.innerWidth <= 600) {
-        navLinks.classList.remove('open');
-        hamburgerBtn.setAttribute('aria-expanded', false);
-      }
+    // Hamburger menu
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburgerBtn && navLinks) {
+      hamburgerBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+        hamburgerBtn.setAttribute('aria-expanded', !expanded);
+      });
+      navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 600) {
+            navLinks.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', false);
+          }
+        });
+      });
+    }
+
+    // Lightbox
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
     });
-  });
-}
-</script>
+  </script>
 </body>
-</html> 
+</html>
