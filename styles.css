@@ -263,13 +263,12 @@ p  { margin: 0; max-width: 62ch; }
   min-height: 500px;
 }
 
-/* Contain hero variant — shows the full photo without cropping.
-   padding-left reserves the left side for the hero-card so the photo
-   sits entirely to the right of it. */
+/* Contain hero variant — photo fills the right half top-to-bottom,
+   left side stays cream for the hero-card. */
 .hero.contain .hero-img {
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: right center;
+  background-position: center;
   background-color: var(--surface-warm);
   padding-left: clamp(620px, 50vw, 720px);
 }
