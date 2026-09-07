@@ -585,6 +585,24 @@ section.warm { background: var(--surface-warm); }
   font-weight: 500;
   color: var(--ink);
 }
+.price-list .period span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.85rem;
+  color: var(--ink-mute);
+  font-weight: 400;
+  margin-top: 0.3rem;
+  letter-spacing: 0;
+}
+.price-notes .footnote {
+  display: block;
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line-soft);
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  font-style: italic;
+}
 .price-list .amount {
   font-family: var(--serif);
   font-size: 1.6rem;
