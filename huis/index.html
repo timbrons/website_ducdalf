@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <script>document.write('<base href="' + (location.hostname.endsWith('.github.io') ? '/website_ducdalf/' : '/') + '">');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Het huis &mdash; Duc'dalf Languedoc</title>
+  <link rel="icon" href="Huis1.jpg" type="image/jpeg">
+  <link rel="apple-touch-icon" href="Huis1.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,300..700,0..100&family=Manrope:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav hero-over" id="nav">
+    <div class="nav-inner">
+      <div class="nav-brand"><a href="./">DUC&rsquo;DALF <span>&mdash;</span> LANGUEDOC</a></div>
+      <div class="nav-links" id="navLinks">
+        <a href="./">Home</a>
+        <a href="huis/">Het huis</a>
+        <a href="./#omgeving">De omgeving</a>
+        <a href="./#park">Parc le Duc</a>
+        <a href="boeken/">Boeken</a>
+        <a href="./#contact">Contact</a>
+      </div>
+      <div class="nav-cta-wrap">
+        <a href="boeken/" class="btn">Boek nu</a>
+      </div>
+      <button class="hamburger" id="hamburgerBtn" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <header class="hero contain">
+    <div class="hero-img" style="background-image: url('Foto1.jpg');"></div>
+    <div class="hero-card">
+      <h1>Ontdek het Franse vakantiegevoel</h1>
+      <p>Dit comfortabele vakantiehuis combineert rust, privacy en modern gemak op een unieke locatie aan de rand van Parc le Duc. Met een grote zonnige tuin, twee terrassen en een volledig vernieuwde keuken biedt het alles voor een ontspannen vakantie. Een heerlijke plek voor gezinnen, stellen of iedereen die wil genieten van rust, natuur en ontspanning.</p>
+    </div>
+  </header>
+
+  <section id="huis">
+    <div class="container">
+      <div class="split">
+        <div class="split-media sticky"><img src="Foto2.jpg" alt="Vakantiehuis Duc'dalf"></div>
+
+        <div>
+          <div class="prose">
+            <p><span class="lede">Even helemaal weg&hellip;</span>In ons vakantiehuis geniet je van rust, ruimte en het heerlijke Franse buitenleven. De bungalow ligt op een rustige locatie aan de buitenrand van Parc le Duc en biedt aan de achterzijde vrij uitzicht op de natuur. Op de ruime kavel van maar liefst 630 m&sup2; heb je alle ruimte om te ontspannen en te genieten.</p>
+            <p>Overdag zoek je een plekje in de zon of juist de schaduw met een goed boek. Aan het einde van de dag schuif je aan voor een heerlijk diner op het ruime terras. Sluit de dag af onder een indrukwekkende sterrenhemel en ervaar de rust die deze bijzondere plek zo uniek maakt.</p>
+          </div>
+
+          <div class="subsection">
+            <div class="subsection-title">Ons vakantiehuis biedt</div>
+            <ul class="feature-list">
+              <li>3 slaapkamers voor maximaal 6 personen (1 masterbedroom, 1 kamer met stapelbed en 1 kamer met twee losse bedden)</li>
+              <li>Ruime tuin van 630 m&sup2;, met veel privacy en vrij uitzicht op de natuur</li>
+              <li>Oprit met eigen parkeerplaats voor 1 auto</li>
+              <li>Twee terrassen, waarvan &eacute;&eacute;n overdekt</li>
+              <li>Nieuwe, moderne U-keuken, geplaatst in 2026</li>
+              <li>Vaatwasser, combimagnetron en Dolce Gusto-koffiemachine</li>
+              <li>Wasmachine</li>
+              <li>Airconditioning</li>
+              <li>TV (Nederlandse zenders) en Starlink WIFI</li>
+              <li>Drie fietsen</li>
+              <li>Elektrische barbecue en twee ligbedden</li>
+              <li>Kinderstoel, campingbedje en kinderspeelgoed</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="fotos" class="warm">
+    <div class="container">
+      <div class="section-title-row">
+        <div>
+          <span class="eyebrow">Foto&rsquo;s</span>
+          <h2>Het huis in beeld</h2>
+        </div>
+      </div>
+      <div class="gallery">
+        <div class="cell" onclick="openLightbox('Foto3.jpg')"><img src="Foto3.jpg" alt="Vakantiehuis Duc'dalf"></div>
+        <div class="cell" onclick="openLightbox('Foto4.jpg')"><img src="Foto4.jpg" alt="Vakantiehuis Duc'dalf"></div>
+        <div class="cell" onclick="openLightbox('Foto5.jpg')"><img src="Foto5.jpg" alt="Vakantiehuis Duc'dalf"></div>
+        <div class="cell" onclick="openLightbox('Foto6.jpg')"><img src="Foto6.jpg" alt="Vakantiehuis Duc'dalf"></div>
+        <div class="cell" onclick="openLightbox('Foto7.jpg')"><img src="Foto7.jpg" alt="Vakantiehuis Duc'dalf"></div>
+        <div class="cell" onclick="openLightbox('Foto8.jpg')"><img src="Foto8.jpg" alt="Vakantiehuis Duc'dalf"></div>
+        <div class="cell" onclick="openLightbox('Foto9.jpg')"><img src="Foto9.jpg" alt="Vakantiehuis Duc'dalf"></div>
+        <div class="cell" onclick="openLightbox('Foto10.jpg')"><img src="Foto10.jpg" alt="Vakantiehuis Duc'dalf"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prijzen">
+    <div class="container">
+      <div class="section-title-row">
+        <div>
+          <span class="eyebrow">Prijzen</span>
+          <h2>Tarieven per week</h2>
+        </div>
+      </div>
+
+      <div class="prijzen">
+        <ul class="price-list">
+          <li>
+            <div class="period">Laagseizoen</div>
+            <div class="amount">&euro;&nbsp;665,-</div>
+          </li>
+          <li>
+            <div class="period">Middenseizoen</div>
+            <div class="amount">&euro;&nbsp;896,-</div>
+          </li>
+          <li>
+            <div class="period">Hoogseizoen</div>
+            <div class="amount">&euro;&nbsp;1.099,-</div>
+          </li>
+        </ul>
+
+        <div class="price-notes">
+          De tarieven zijn inclusief parkkosten en exclusief verplichte schoonmaak (&euro;&nbsp;64,-) en toeristenbelasting.<br><br>
+          Roken en huisdieren zijn niet toegestaan.
+        </div>
+      </div>
+
+      <div style="margin-top: 2.5rem;">
+        <a href="boeken/" class="btn">Boek nu</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="warm">
+    <div class="container">
+      <div class="section-title-row">
+        <div>
+          <span class="eyebrow">Contact</span>
+          <h2>Vragen? Neem gerust contact met ons op</h2>
+        </div>
+      </div>
+
+      <div class="adres-grid">
+        <div class="adres-block">
+          <div class="label">Adres</div>
+          <address>
+            Parc le Duc, Languedoc<br>
+            Route de Fontanes, RD109<br>
+            34270 Vacquières, France
+          </address>
+          <small>Parkeren kan gratis naast het vakantiehuis of op het parkeerterrein bij de ingang van het park.</small>
+        </div>
+
+        <div class="contact-form-block">
+          <div class="label">Contact</div>
+          <form autocomplete="off" method="POST" action="https://formsubmit.co/ducdalf.languedoc@gmail.com">
+            <input type="hidden" name="_subject" value="Contactformulier via huispagina" />
+            <input type="hidden" name="_next" value="https://vakantiehuis-ducdalf.nl/contact/" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="box" />
+            <div class="form-row">
+              <label for="naam">Naam</label>
+              <input type="text" id="naam" name="naam" required>
+            </div>
+            <div class="form-row">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-row">
+              <label for="bericht">Bericht</label>
+              <textarea id="bericht" name="bericht" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn" style="margin-top:0.4rem;">Verzenden</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="brand">DUC&rsquo;DALF <span>&mdash;</span> LANGUEDOC</div>
+      <div>Vakantiehuis in Parc le Duc, Vacquières</div>
+    </div>
+  </footer>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <span class="close-x" aria-label="Sluiten">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    const nav = document.getElementById('nav');
+    function updateNav() {
+      if (window.scrollY > 60) nav.classList.add('solid');
+      else nav.classList.remove('solid');
+    }
+    updateNav();
+    window.addEventListener('scroll', updateNav, { passive: true });
+
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburgerBtn && navLinks) {
+      hamburgerBtn.addEventListener('click', function() {
+        navLinks.classList.toggle('open');
+        const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true';
+        hamburgerBtn.setAttribute('aria-expanded', !expanded);
+      });
+      navLinks.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          if (window.innerWidth <= 900) {
+            navLinks.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', false);
+          }
+        });
+      });
+    }
+
+    function openLightbox(src) {
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
