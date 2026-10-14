@@ -142,7 +142,17 @@ p  { margin: 0; max-width: 62ch; }
 .nav-links a:hover { opacity: 1; }
 .nav-links a:hover::after { right: 0; }
 
-.nav-cta-wrap { display: flex; justify-content: flex-end; }
+.nav-cta-wrap { display: flex; justify-content: flex-end; gap: 0.6rem; }
+.nav.hero-over:not(.solid) .nav-cta-wrap .btn.ghost {
+  color: #FAF6EE;
+  border-color: rgba(250, 246, 238, 0.7);
+  background: transparent;
+}
+.nav.hero-over:not(.solid) .nav-cta-wrap .btn.ghost:hover {
+  background: #FAF6EE;
+  color: var(--ink);
+  border-color: #FAF6EE;
+}
 
 .hamburger {
   display: none;
@@ -256,8 +266,6 @@ p  { margin: 0; max-width: 62ch; }
   line-height: 1.55;
 }
 .hero-card .btn { margin-top: 1.8rem; }
-.hero-card .hero-ctas { margin-top: 1.8rem; display: flex; gap: 0.7rem; flex-wrap: wrap; }
-.hero-card .hero-ctas .btn { margin-top: 0; }
 
 /* Compact hero variant (for /huis/) */
 .hero.compact {
