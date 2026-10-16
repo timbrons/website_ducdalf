@@ -85,44 +85,11 @@ p  { margin: 0; max-width: 62ch; }
   background: transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
-.nav.hero-over:not(.solid)::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto 0;
-  height: 200%;
-  background: linear-gradient(to bottom, rgba(20, 16, 10, 0.72) 0%, rgba(20, 16, 10, 0.42) 55%, rgba(20, 16, 10, 0) 100%);
-  pointer-events: none;
-}
-.nav.hero-over:not(.solid) .nav-inner {
-  color: #FAF6EE;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
-}
-.nav.hero-over:not(.solid) .nav-brand {
-  font-family: var(--sans);
-  font-variation-settings: normal;
-  font-weight: 700;
-  font-size: 1.2rem;
-  letter-spacing: 0.16em;
-  color: #FFFFFF;
-  text-shadow:
-    0 0 1px rgba(0, 0, 0, 0.9),
-    0 0 1px rgba(0, 0, 0, 0.9),
-    0 1px 2px rgba(0, 0, 0, 0.75);
-}
-.nav.hero-over:not(.solid) .nav-brand span {
-  color: #FFFFFF;
-  opacity: 0.85;
-  font-weight: 400;
-}
-.nav.hero-over:not(.solid) .nav-links a { opacity: 1; }
-.nav.hero-over:not(.solid) .nav-cta-wrap .btn {
-  box-shadow: none;
-}
-.nav.hero-over:not(.solid) .nav-cta-wrap .btn:not(.ghost) {
-  background: var(--brown);
-  border-color: var(--brown);
-  color: #FFFFFF;
-  text-shadow: none;
+.nav.hero-over:not(.solid) {
+  background: color-mix(in oklab, var(--ground) 78%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  -webkit-backdrop-filter: saturate(140%) blur(10px);
+  box-shadow: 0 1px 0 rgba(62, 54, 40, 0.08);
 }
 .nav.solid,
 .nav.light {
@@ -139,8 +106,6 @@ p  { margin: 0; max-width: 62ch; }
   gap: 1.5rem;
   color: var(--ink);
 }
-.nav.hero-over .nav-inner { color: #FAF6EE; }
-.nav.hero-over.solid .nav-inner { color: var(--ink); }
 
 .nav-brand {
   font-family: var(--serif);
@@ -151,7 +116,6 @@ p  { margin: 0; max-width: 62ch; }
   white-space: nowrap;
 }
 .nav-brand span { color: var(--brown); font-weight: 300; margin: 0 0.35em; }
-.nav.hero-over:not(.solid) .nav-brand span { color: var(--brown-soft); }
 
 .nav-links {
   display: flex;
@@ -182,17 +146,6 @@ p  { margin: 0; max-width: 62ch; }
 .nav-links a:hover::after { right: 0; }
 
 .nav-cta-wrap { display: flex; justify-content: flex-end; gap: 0.6rem; }
-.nav.hero-over:not(.solid) .nav-cta-wrap .btn.ghost {
-  color: var(--brown-deep);
-  border-color: #FFFFFF;
-  background: #FFFFFF;
-  text-shadow: none;
-}
-.nav.hero-over:not(.solid) .nav-cta-wrap .btn.ghost:hover {
-  background: #FAF6EE;
-  color: var(--ink);
-  border-color: #FAF6EE;
-}
 
 .hamburger {
   display: none;
