@@ -116,12 +116,13 @@ p  { margin: 0; max-width: 62ch; }
 }
 .nav.hero-over:not(.solid) .nav-links a { opacity: 1; }
 .nav.hero-over:not(.solid) .nav-cta-wrap .btn {
-  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.4);
+  box-shadow: none;
 }
 .nav.hero-over:not(.solid) .nav-cta-wrap .btn:not(.ghost) {
   background: var(--brown);
   border-color: var(--brown);
   color: #FFFFFF;
+  text-shadow: none;
 }
 .nav.solid,
 .nav.light {
