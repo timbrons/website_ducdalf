@@ -85,6 +85,19 @@ p  { margin: 0; max-width: 62ch; }
   background: transparent;
   transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
+.nav.hero-over:not(.solid)::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 180%;
+  background: linear-gradient(to bottom, rgba(20, 16, 10, 0.55) 0%, rgba(20, 16, 10, 0.25) 55%, rgba(20, 16, 10, 0) 100%);
+  pointer-events: none;
+}
+.nav.hero-over:not(.solid) .nav-inner {
+  color: #FAF6EE;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+}
+.nav.hero-over:not(.solid) .nav-links a { opacity: 1; }
 .nav.solid,
 .nav.light {
   background: color-mix(in oklab, var(--ground) 94%, transparent);
