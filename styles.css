@@ -86,10 +86,10 @@ p  { margin: 0; max-width: 62ch; }
   transition: background 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 .nav.hero-over:not(.solid) {
-  background: color-mix(in oklab, var(--ground) 78%, transparent);
+  background: color-mix(in oklab, var(--ground) 94%, transparent);
   backdrop-filter: saturate(140%) blur(10px);
   -webkit-backdrop-filter: saturate(140%) blur(10px);
-  box-shadow: 0 1px 0 rgba(62, 54, 40, 0.08);
+  box-shadow: var(--shadow-nav);
 }
 .nav.solid,
 .nav.light {
